@@ -1,0 +1,8 @@
+π{StudentId, StudentName, GroupId}(
+	σ{LecturerName = :LecturerName}(
+		σ{Mark = :Mark}(Marks) 
+		⋈ Students 
+		⋈ Plan
+		⋈ Lecturers
+	)
+)

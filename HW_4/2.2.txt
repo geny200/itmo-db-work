@@ -1,0 +1,1 @@
+(StudentId, StudentName, GroupId, GroupName, CourseId, CourseName, LecturerId, LecturerName, Mark) => (GroupId, CourseId, LecturerId, LecturerName); (StudentId, StudentName, GroupId, GroupName); (CourseId, CourseName); (StudentId, CourseId, Mark);

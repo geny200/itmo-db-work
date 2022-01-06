@@ -1,0 +1,4 @@
+* Удаляем правило CourseId, StudentId -> Mark, т.к. (Mark) ⊂ X_{S \ CourseId, StudentId -> Mark}^+ 
+* Удаляем правило GroupId, CourseId -> LecturerName, т.к. (LecturerName) ⊂ X_{S \ GroupId, CourseId -> LecturerName}^+ 
+
+Больше правил удалить нельзя т.к. для каждой зависимости замыкание левой части текущего ФЗ без данной зависимости не включает атрибут из правой части.

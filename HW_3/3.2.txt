@@ -1,0 +1,6 @@
+{CourseId, StudentId}
+{CourseId, StudentName, StudentId, GroupId}
+{StudentName, GroupName, StudentId, GroupId, CourseId}
+{StudentName, GroupName, StudentId, CourseName, GroupId, CourseId}
+{StudentName, GroupName, StudentId, LecturerId, CourseName, LecturerName, GroupId, CourseId}
+{StudentName, Mark, GroupName, StudentId, LecturerId, CourseName, LecturerName, GroupId, CourseId}

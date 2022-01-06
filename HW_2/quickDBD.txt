@@ -1,0 +1,48 @@
+Persons
+-
+PersonID int PK
+FirstName varchar(128)
+FullName varchar(256) NULL
+Gender bit
+BirthDate date 
+Email varchar(255) UNIQUE
+
+
+Teachers
+-
+PersonID int UNIQUE FK 0- Persons.PersonID
+TeacherID PK
+JobTitle varchar(64)
+Salary int
+
+Students
+-
+PersonID int UNIQUE FK 0- Persons.PersonID
+StudentID PK int
+GroupID int FK >- Groups.GroupID
+
+Groups
+-
+GroupID int PK
+GroupName varchar(64)
+StudentID int UNIQUE FK >- Students.StudentID
+LessonID int UNIQUE FK >- Lessons.LessonID
+
+Subjects 
+-
+SubjectID int PK
+SubjectName varchar(64)
+
+Marks 
+-
+Mark decimal
+StudentID int PK FK >0- Students.StudentID
+LessonID int PK FK >0- Lessons.LessonID
+
+Lessons
+-
+LessonID UNIQUE int
+Semester int PK
+TeacherID int PK FK >0- Teachers.TeacherID
+GroupID int PK FK >- Groups.GroupID
+SubjectID int PK FK >0- Subjects.SubjectID

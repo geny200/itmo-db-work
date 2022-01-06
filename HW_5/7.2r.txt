@@ -1,0 +1,6 @@
+π{CourseName, GroupName}(
+	(π{CourseId, StudentId}(Marks)
+		⋇ π{StudentId, GroupId}(Students))
+	⋈ Courses
+	⋈ Groups
+)

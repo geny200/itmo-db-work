@@ -1,0 +1,7 @@
+StudentId -> StudentName, GroupId
+GroupId -> GroupName
+GroupName -> GroupId
+CourseId -> CourseName
+LecturerId -> LecturerName
+StudentId, CourseId, LecturerId, GroupId -> Mark
+GroupId, CourseId -> LecturerId, LecturerName

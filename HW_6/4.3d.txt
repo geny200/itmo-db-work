@@ -1,0 +1,14 @@
+StudentPlans(StudentId, CourseId) :- 
+	Students(StudentId, StudentName, GroupId), 
+	Plan(GroupId, CourseId, LecturerId).
+
+StudentMarks(StudentId, CourseId) :- 
+	Students(StudentId, StudentName, GroupId), 
+	Marks(StudentId, CourseId, Mark),
+	Mark > 2.
+
+Student(StudentName, CourseName) :- 
+	StudentPlans(StudentId, CourseId),
+	¬ StudentMarks(StudentId, CourseId),
+	Students(StudentId, StudentName, GroupId), 
+	Courses(CourseId, CourseName).

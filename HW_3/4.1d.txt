@@ -1,0 +1,4 @@
+* Расщепление (StudentId -> StudentName, GroupId) в (StudentId -> StudentName) и (StudentId -> GroupId)
+* Расщепление (GroupId, CourseId -> LecturerId, LecturerName) в (GroupId, CourseId -> LecturerId) и (GroupId, CourseId -> LecturerName)
+
+Больше в правых частях нескольких атрибутов нет.

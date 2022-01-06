@@ -1,0 +1,12 @@
+pi{TeamName}(
+  pi{TeamName, TeamId, ContestId}(
+    Sessions
+    nj Teams
+  )
+  except
+  pi{TeamName, TeamId, ContestId}(
+    Sessions
+    nj Runs
+    nj Teams
+  )
+)

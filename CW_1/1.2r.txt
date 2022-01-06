@@ -1,0 +1,6 @@
+pi{TeamName}(
+	select{ContestId = :ContestId}(
+			Sessions
+		) 
+		nj Teams
+	)

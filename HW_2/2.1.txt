@@ -1,0 +1,12 @@
+id      -> int
+name    -> varchar(128)
+string  -> varchar(256)
+gender  -> bit
+date    -> date
+mail    -> varchar(255)
+score   -> decimal(5, 2)
+gr_name -> varchar(64)
+s_name  -> varchar(64)
+sem     -> int
+job     -> varchar(64)
+num     -> int

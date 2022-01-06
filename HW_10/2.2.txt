@@ -1,0 +1,42 @@
+tryFlight:
+// Спрашиваем какой рейс пользователю интересен
+show("Введите номер рейса")
+:FlightId = readInt()
+
+tryAskSeat:
+// Получаем из БД информацию о местах по данному рейсу
+seats = getResultSetFromDBSM(<sql запрос из 2.1>)
+
+if seats.isEmpty():
+	show("Мест на данный рейс нет")
+	goto tryFlight
+	
+seats.foreach(s => show(s))
+
+trySeat:
+// Спрашиваем какое место пользователю интересено
+show("Введите номера места")
+:SeatNo = read()
+
+if :SeatNo not in seats:
+	show("Номер места не валиден")
+	goto trySeat;
+
+// Спрашиваем что хочет сделать пользователь
+action = showAction("Место $:SeatNo на рейс $:FlightId", {"Купить", "Забронировать"})
+
+if action == "Купить":
+	result = getResultFromDBSM(<первый sql запрос из 2.3>)
+else:
+	show("Введите свой userId")
+	:UserId = read()
+	show("Введите пароль")
+	:UserId = read()
+	result = getResultFromDBSM(<второй sql запрос из 2.3>)
+
+// Отображаем результат операции
+if result == true:
+	show("Успешно")
+else:
+	show("Что-то пошло не так, попробуйте снова")
+	goto tryAskSeat

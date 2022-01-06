@@ -1,0 +1,18 @@
+Рассматриваемое ФЗ (далее во всех пунктах будет подразумеваться):
+1) StudentId -> StudentName, GroupId, GroupName
+2) GroupId -> GroupName
+3) GroupName -> GroupId
+4) CourseId -> CourseName
+5) LecturerId -> LecturerName
+6) CourseId, StudentId -> Mark
+7) GroupId, CourseId -> LecturerId
+8) StudentId -> GroupId
+Данное ФЗ эквивалентно ФЗ из 3ДЗ
+
+Для выполнения условия 2НФ "Неключевые атрибуты функционально зависят от ключа в целом", декомпозируем отношение по "мешающим" ФЗ: 
+
+* GroupId, CourseId -> LecturerId, LecturerName (данное ФЗ получается из 7 и 5)
+* StudentId -> StudentName, GroupId, GroupName (номер 1 в ФЗ)
+* CourseId -> CourseName (номер 4 в ФЗ)
+
+После декомпозиции условие 2НФ выполняется.

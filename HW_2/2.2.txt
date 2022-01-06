@@ -1,0 +1,57 @@
+1. Person 1 = 0..1 Teachers - 
+	Изменения в Teachers:
+		- Дополнительное поле PersonID.
+		- Внешний ключ PersonID на Person.
+		- Ключ PersonID (unique).
+
+2. Person 1 = 0..1 Students - 
+	Изменения в Students:
+		- Дополнительное поле PersonID.
+		- Внешний ключ PersonID на Person.
+		- Ключ PersonID (unique).
+
+3. Teachers 1 = 0..n Lessons - 
+	Изменения в Lessons:
+		- Дополнительное поле TeacherID.
+		- Внешний ключ TeacherID на Teachers.
+
+4. Lessons 0..n = 1 Subject -
+	Изменения в Lessons:
+		- Дополнительное поле SubjectID.
+		- Внешний ключ SubjectID на Subjects.
+
+5. Students 1..n = 1 Groups -
+	Изменения в Students:
+		- Дополнительное поле GroupID.
+		- Внешний ключ GroupID на Groups.
+		- Ключ (StudentID, GroupID).
+	Изменения в Groups:
+		- Дополнительное поле StudentID.
+		- Внешний ключ (StudentID, GroupID) на Students.
+		- Ключ StudentID.
+
+6. Groups 1 = 1..n Lessons -
+	Изменения в Lessons:
+		- Дополнительное поле GroupID.
+		- Внешний ключ GroupID на Groups.
+		- Ключ (LessonID, GroupID).
+	Изменения в Groups:
+		- Дополнительное поле LessonID.
+		- Внешний ключ (LessonID, GroupID) на Lessons.
+		- Ключ LessonID.
+
+7. Marks (ассоциация)
+	= 0..n Students
+	= 0..n Lessons 
+	Новая таблица Marks с полем Mark.
+	Изменения в Marks:
+		- Дополнительное поле StudentID.
+		- Дополнительное поле LessonID.
+		- Первичный ключ (StudentID, LessonID)
+		- Внешний ключ LessonID на Lessons.
+		- Внешний ключ StudentID на Students.
+
+8. Lessons (Слабая сущность)
+	Изменения в Lessons:
+		- (поля: TeacherID, GroupID, SubjectID - уже добавлены изменениями выше)
+		- Первичный ключ (Semester, TeacherID, GroupID, SubjectID)

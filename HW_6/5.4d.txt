@@ -1,0 +1,19 @@
+Q(StudentId, CourseId) :-
+	Marks(StudentId, CourseId, Mark).
+
+S(CourseId, GroupId) :- 
+	Lecturers(LecturerId, LecturerName),
+	Plan(GroupId, CourseId, LecturerId),
+	LecturerName = :LecturerName.
+
+DecSub(StudentId, CourseId) :-
+	Students(StudentId, StudentName, GroupId),
+	S(CourseId, GroupId),
+	¬ Q(StudentId, CourseId).
+
+PiDecSub(StudentId) :-
+	DecSub(StudentId, _).
+
+Student(StudentId) :- 
+	Students(StudentId, StudentName, GroupId),
+	¬ PiDecSub(StudentId).

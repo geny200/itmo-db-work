@@ -1,0 +1,4 @@
+{CourseId, GroupId}
+{CourseId, GroupId, GroupName}
+{CourseId, CourseName, GroupId, GroupName}
+{GroupName, LecturerId, CourseName, LecturerName, GroupId, CourseId}

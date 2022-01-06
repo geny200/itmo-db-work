@@ -1,0 +1,8 @@
+Отношения: (CourseId, CourseName), (LecturerId, LecturerName), (GroupId, GroupName) и (StudentId, StudentName, GroupId) - находятся в 5НФ по т.Дейта-Фейгина 1 т.к. в каждом из этих отношении все ключи простые, значит они находятся в НФБК.
+
+Рассмотрим ФЗ для оставшихся отношений и проверим, что в каждой нетривиальной функциональной зависимости X→Y, X является надключом:
+
+1) (StudentId, CourseId, Mark) ФЗ: StudentId, CourseId -> Mark, ключ - {StudentId, CourseId}, зн-т условие выполняется.
+2) (GroupId, CourseId, LecturerId)  ФЗ: GroupId, CourseId -> LecturerId, ключ - {GroupId, CourseId}, зн-т условие выполняется.
+
+Т.к. декомпозиций на данном этапе не произошло, то исходное ФЗ выполняется и мы ничего не потеряли на данном этапе.

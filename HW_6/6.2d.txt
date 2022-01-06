@@ -1,0 +1,36 @@
+Q(CourseId, StudentId) :-
+	Marks(StudentId, CourseId, Mark).
+
+PiQX(CourseId) :-
+	Courses(CourseId, _).
+
+S(StudentId, GroupId) :-
+	Students(StudentId, StudentName, GroupId).
+
+PiSZ(GroupId) :-
+	Groups(GroupId, _).
+
+NjoinQS(CourseId, StudentId, GroupId) :-
+	Q(CourseId, StudentId),
+	S(StudentId, GroupId).
+
+DecPiQXS(CourseId, StudentId, GroupId) :-
+	PiQX(CourseId),
+	S(StudentId, GroupId).
+
+SubIn(CourseId, StudentId, GroupId) :-
+	DecPiQXS(CourseId, StudentId, GroupId),
+	¬ NjoinQS(CourseId, StudentId, GroupId).
+
+PiSubInXZ(CourseId, GroupId) :-
+	SubIn(CourseId, _, GroupId).
+
+DecPiQXPiSZ(CourseId, GroupId) :-
+	PiQX(CourseId), 
+	PiSZ(GroupId).
+
+Result(GroupName, CourseName) :- 
+	DecPiQXPiSZ(CourseId, GroupId),
+	¬ PiSubInXZ(CourseId, GroupId),
+	Groups(GroupId, GroupName),
+	Courses(CourseId, CourseName).

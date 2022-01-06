@@ -1,0 +1,6 @@
+(CourseId, CourseName) => (CourseId, CourseName);
+(LecturerId, LecturerName) => (LecturerId, LecturerName);
+(GroupId, GroupName) => (GroupId, GroupName);
+(StudentId, StudentName, GroupId) => (StudentId, StudentName, GroupId);
+(GroupId, CourseId, LecturerId) => (GroupId, CourseId, LecturerId);
+(StudentId, CourseId, Mark) => (StudentId, CourseId, Mark);

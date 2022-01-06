@@ -1,0 +1,18 @@
+Отношения: (CourseId, CourseName), (LecturerId, LecturerName), (GroupId, GroupName) и (StudentId, StudentName, GroupId) - находятся в 5НФ по т.Дейта-Фейгина 1 т.к. в каждом из этих отношении все ключи простые, значит они находятся в 4НФ.
+
+Рассмотри оставшиеся 2 отношения:
+Т.к. у нас нет декартова произведения, то МЗ с ø нет, тогда для оставшихся двух отношений (каждое из которых из 3 атрибутов) нужно проверить 3 МЗ для каждого:
+
+1) (StudentId, CourseId, Mark) МЗ: 
+* StudentId ->> CourseId | Mark; 
+* CourseId ->> StudentId | Mark; 
+* Mark ->> CourseId | StudentId; 
+Контр пример для всех трёх МЗ: (StudentId, CourseId, Mark) - (1, 1, 100), (1, 2, 60), (2, 1, 60), (2, 2, 100)
+
+2) (GroupId, CourseId, LecturerId)  МЗ:
+* GroupId ->> CourseId | LecturerId;
+* CourseId ->> GroupId | LecturerId;
+* LecturerId ->> GroupId | CourseId;
+Контр пример для всех трёх МЗ: (GroupId, CourseId, LecturerId) - (1, 1, 1), (1, 2, 2), (2, 1, 2), (2, 2, 1)
+
+Т.к. декомпозиций на данном этапе не произошло, то исходное ФЗ выполняется и мы ничего не потеряли на данном этапе.

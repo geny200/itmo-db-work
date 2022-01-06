@@ -1,0 +1,9 @@
+Проход для удаления 1
+* Удаляем LecturerId из левой части StudentId, CourseId, LecturerId, GroupId -> Mark
+* Удаляем GroupId из левой части StudentId, CourseId, LecturerId, GroupId -> Mark
+
+Проход для удаления 2
+* Удаляем GroupId из левой части CourseId, StudentId, GroupId -> Mark
+* Удаляем LecturerId из левой части CourseId, StudentId, LecturerId -> Mark
+
+Оставшиеся атрибуты из левых частей удалить нельзя, т.к. тогда замыкание оставшихся атрибутов в левой части, не включает атрибут из правой части. 
